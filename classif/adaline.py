@@ -1,6 +1,6 @@
 import numpy as np
 
-from base import Classifier
+from classif.base import Classifier
 
 class ADALINE(Classifier):
     """ Perceptron de ADALINE

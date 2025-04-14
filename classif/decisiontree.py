@@ -4,7 +4,7 @@ import math
 # Eventuellement, il peut être nécessaire d'installer graphviz sur votre compte:
 # pip install --user --install-option="--prefix=" -U graphviz
 
-from base import Classifier
+from classif.base import Classifier
 
 def major_class(Y):
     """ Y : (array) : array de labels

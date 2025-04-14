@@ -1,6 +1,6 @@
 import numpy as np
 
-from base import Classifier
+from classif.base import Classifier
 
 class KNN(Classifier):
     """ Classe pour représenter un classifyur par K plus proches voisins.
