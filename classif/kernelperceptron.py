@@ -101,7 +101,7 @@ class KernelPoly(Kernel):
           V_proj = np.append(V_proj, [one[i] * x12[i] for i in range(len(one))],axis=1)
 
         return V_proj
-        # raise NotImplementedError("Please Implement this method")
+        
 
 
 
@@ -132,7 +132,7 @@ class KernelPerceptron(Perceptron):
 
         # self.allw =[self.w.copy()] # stockage des premiers poids
         
-        # raise NotImplementedError("Please Implement this method")
+        
         
     def train_step(self, desc_set, label_set):
         """ Réalise une unique itération sur tous les exemples du dataset

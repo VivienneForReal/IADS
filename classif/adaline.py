@@ -23,7 +23,7 @@ class ADALINE(Classifier):
         self.w = np.random.randn(input_dimension) * learning_rate
         
         self.allw = [] # stockage des premiers poids
-        # raise NotImplementedError("Please Implement this method")
+        
         
     def train(self, desc_set, label_set):
         """ Permet d'entrainer le modele sur l'ensemble donné
@@ -58,7 +58,7 @@ class ADALINE(Classifier):
                     return
                 lastw = self.w
 
-        # raise NotImplementedError("Please Implement this method")
+        
     
     def score(self,x):
         """ rend le score de prédiction sur x (valeur réelle)
@@ -66,7 +66,7 @@ class ADALINE(Classifier):
         """
         return np.dot(self.w, x)
 
-        # raise NotImplementedError("Please Implement this method")
+        
     
     def predict(self, x):
         """ rend la prediction sur x (soit -1 ou soit +1)
@@ -74,7 +74,7 @@ class ADALINE(Classifier):
         """
         return np.sign(self.score(x))
 
-        # raise NotImplementedError("Please Implement this method")
+        
 
 
 
@@ -99,7 +99,7 @@ class AnalyticADALINE(Classifier):
         # self.w = np.random.randn(input_dimension) * learning_rate
         
         # self.allw = [] # stockage des premiers poids
-        # raise NotImplementedError("Please Implement this method")
+        
         
     def train(self, desc_set, label_set):
         """ Permet d'entrainer le modele sur l'ensemble donné
@@ -110,7 +110,7 @@ class AnalyticADALINE(Classifier):
         """        
         self.w = np.linalg.solve(desc_set.T @ desc_set, desc_set.T @ label_set)
 
-        # raise NotImplementedError("Please Implement this method")
+        
     
     def score(self,x):
         """ rend le score de prédiction sur x (valeur réelle)
@@ -118,7 +118,7 @@ class AnalyticADALINE(Classifier):
         """
         return np.dot(self.w, x)
 
-        # raise NotImplementedError("Please Implement this method")
+        
     
     def predict(self, x):
         """ rend la prediction sur x (soit -1 ou soit +1)
@@ -126,4 +126,4 @@ class AnalyticADALINE(Classifier):
         """
         return np.sign(self.score(x))
 
-        # raise NotImplementedError("Please Implement this method")
+        
