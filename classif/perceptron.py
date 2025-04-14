@@ -92,3 +92,52 @@ class ClassifierPerceptron(Classifier):
             i += 1
         
         return norm_diff_values
+    
+
+class ClassifierPerceptronBiais(ClassifierPerceptron):
+    """ Perceptron de Rosenblatt avec biais
+        Variante du perceptron de base
+    """
+    def __init__(self, input_dimension, learning_rate=0.01, init=True):
+        """ Constructeur de Classifier
+            Argument:
+                - input_dimension (int) : dimension de la description des exemples (>0)
+                - learning_rate (par défaut 0.01): epsilon
+                - init est le mode d'initialisation de w: 
+                    - si True (par défaut): initialisation à 0 de w,
+                    - si False : initialisation par tirage aléatoire de valeurs petites
+        """
+        # Appel du constructeur de la classe mère
+        super().__init__(input_dimension, learning_rate=learning_rate, init=init)
+        # Affichage pour information (décommentez pour la mise au point)
+        # print("Init perceptron biais: w= ",self.w," learning rate= ",learning_rate)
+        
+    def train_step(self, desc_set, label_set):
+        """ Réalise une unique itération sur tous les exemples du dataset
+            donné en prenant les exemples aléatoirement.
+            Arguments:
+                - desc_set: ndarray avec des descriptions
+                - label_set: ndarray avec les labels correspondants
+        """  
+        ##################
+        ### A COMPLETER !
+        ##################
+        # Ne pas oublier d'ajouter les poids à allw avant de terminer la méthode
+        self.desc_set = desc_set
+        self.label_set = label_set
+        data = np.array(
+            [(i,desc_set[i],label_set[i]) \
+                for i in range(len(desc_set))],dtype=object
+            )
+        
+        np.random.shuffle(data)
+        for _, x_i, y_i in data : 
+            f_x_i = self.score(x_i)
+
+            if f_x_i * y_i < 1 : 
+                self.w += self.learning_rate * (y_i - f_x_i) * x_i
+            
+            self.allw.append(self.w.copy())
+        return self.w
+        # raise NotImplementedError("Vous devez implémenter cette méthode !")    
+# ------------------------ 
