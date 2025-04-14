@@ -155,7 +155,7 @@ class KernelPerceptron(Perceptron):
         
         return self.w 
 
-        #raise NotImplementedError("Please Implement this method")
+        
      
     def score(self,x):
         """ rend le score de prédiction sur x 
@@ -167,5 +167,5 @@ class KernelPerceptron(Perceptron):
         score = np.dot(self.w, x_transformed)
         # Appliquer la fonction d'activation
         return score
-        #raise NotImplementedError("Please Implement this method")
+        
     

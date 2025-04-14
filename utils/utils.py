@@ -44,11 +44,7 @@ def generate_train_test(desc_set, label_set, n_per_class):
     
     return (train_data, train_labels), (test_data, test_labels)
 
-    
 
-# ------------------------ 
-# generate_uniform_dataset
-# ------------------------ 
 
 def generate_uniform_dataset(p, n, binf=-1, bsup=1):
     """ int * int * float^2 -> tuple[ndarray, ndarray]
@@ -65,13 +61,9 @@ def generate_uniform_dataset(p, n, binf=-1, bsup=1):
     + [+1 for i in range(0,n)])
     
     return data_desc, data_label
-    #raise NotImplementedError("Please Implement this method")
+    
 
 
-
-# ------------------------ 
-# generate_gaussian_dataset
-# ------------------------ 
 
 def generate_gaussian_dataset(
     positive_center, 
@@ -101,13 +93,8 @@ def generate_gaussian_dataset(
     
     return np.array(fusion),labels
     
-    #raise NotImplementedError("Please Implement this method")
+    
 
-
-
-# ------------------------ 
-# plot2DSet
-# ------------------------ 
 
 def plot2DSet(desc,labels):    
     """ ndarray * ndarray -> affiHCAge
@@ -124,14 +111,9 @@ def plot2DSet(desc,labels):
     plt.scatter(data_negatifs[:,0],data_negatifs[:,1],marker='o', color="red") # 'o' rouge pour la classe -1
     plt.scatter(data_positifs[:,0],data_positifs[:,1],marker='x', color="blue") # 'x' bleu pour la classe +1
 
-    #raise NotImplementedError("Please Implement this method")
+    
 
 
-
-
-# ------------------------ 
-# plot_frontier
-# ------------------------ 
 
 def plot_frontier(desc_set, label_set, classifier, step=30):
     """ desc_set * label_set * Classifier * int -> NoneType
@@ -151,11 +133,6 @@ def plot_frontier(desc_set, label_set, classifier, step=30):
     # colors[0] est la couleur des -1 et colors[1] est la couleur des +1
     plt.contourf(x1grid,x2grid,res,colors=["darksalmon","skyblue"],levels=[-1000,0,1000])
 
-
-
-# ------------------------ 
-# create_XOR
-# ------------------------ 
 
 def create_XOR(n, var):
     """ int * float -> tuple[ndarray, ndarray]

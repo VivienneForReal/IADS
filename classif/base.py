@@ -13,7 +13,7 @@ class Classifier:
         """
         self.input_dimension = input_dimension
         
-        #raise NotImplementedError("Please Implement this method")
+        
         
     def train(self, desc_set, label_set):
         """ Permet d'entrainer le modele sur l'ensemble donné
