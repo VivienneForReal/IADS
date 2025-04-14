@@ -3,19 +3,19 @@ import numpy as np
 from base import Classifier
 
 
-class ClassifierMultiOAA(Classifier):
-    """ Classifieur multi-classes
+class MultiOAA(Classifier):
+    """ classifyur multi-classes
     """
     def __init__(self, cl_bin):
         """ Constructeur de Classifier
             Argument:
                 - input_dimension (int) : dimension de la description des exemples (espace originel)
-                - cl_bin: classifieur binaire positif/négatif
+                - cl_bin: classifyur binaire positif/négatif
             Hypothèse : input_dimension > 0
         """
 
         self.cl_bin = cl_bin 
-        self.classifieurs = []
+        self.classifyurs = []
 
         # raise NotImplementedError("Vous devez implémenter cette fonction !")
         
@@ -27,12 +27,12 @@ class ClassifierMultiOAA(Classifier):
             label_set: ndarray avec les labels correspondants
             Hypothèse: desc_set et label_set ont le même nombre de lignes
         """      
-        self.classifiers = []
+        self.Classifiers = []
         for c in np.unique(label_set):
             cl = copy.deepcopy(self.cl_bin)
             labels = np.where(label_set == c, 1, -1)
             cl.train(desc_set, labels)
-            self.classifiers.append(cl)
+            self.Classifiers.append(cl)
 
         # raise NotImplementedError("Vous devez implémenter cette fonction !")
         
@@ -41,7 +41,7 @@ class ClassifierMultiOAA(Classifier):
         """ rend le score de prédiction sur x (valeur réelle)
             x: une description
         """
-        scores = [clf.score(x) for clf in self.classifiers]
+        scores = [clf.score(x) for clf in self.Classifiers]
         return scores
 
         # raise NotImplementedError("Vous devez implémenter cette fonction !")

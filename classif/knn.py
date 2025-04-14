@@ -2,13 +2,13 @@ import numpy as np
 
 from base import Classifier
 
-class ClassifierKNN(Classifier):
-    """ Classe pour représenter un classifieur par K plus proches voisins.
+class KNN(Classifier):
+    """ Classe pour représenter un classifyur par K plus proches voisins.
         Cette classe hérite de la classe Classifier
     """
 
     def __init__(self, input_dimension, k):
-        """ Constructeur de ClassifierKNN
+        """ Constructeur de KNN
             Argument:
                 - input_dimension (int) : dimension d'entrée des exemples
                 - k (int) : nombre de voisins à considérer

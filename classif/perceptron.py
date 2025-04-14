@@ -2,7 +2,7 @@ import numpy as np
 
 from base import Classifier
 
-class ClassifierPerceptron(Classifier):
+class Perceptron(Classifier):
     """ Perceptron de Rosenblatt
     """
     def __init__(self, input_dimension, num_labels=10, learning_rate=0.01, init=True ):
@@ -93,7 +93,7 @@ class ClassifierPerceptron(Classifier):
         return norm_diff_values
     
 
-class ClassifierPerceptronBiais(ClassifierPerceptron):
+class BiasedPerceptron(Perceptron):
     """ Perceptron de Rosenblatt avec biais
         Variante du perceptron de base
     """

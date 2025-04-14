@@ -2,7 +2,7 @@ import numpy as np
 
 from base import Classifier
 
-class ClassifierADALINE(Classifier):
+class ADALINE(Classifier):
     """ Perceptron de ADALINE
     """
     def __init__(self, input_dimension, learning_rate, history=False, niter_max=1000):
@@ -81,7 +81,7 @@ class ClassifierADALINE(Classifier):
 
 # code de la classe ADALINE Analytique
 
-class ClassifierADALINE2(Classifier):
+class AnalyticADALINE(Classifier):
     """ Perceptron de ADALINE
     """
     def __init__(self, input_dimension):

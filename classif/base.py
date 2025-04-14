@@ -1,7 +1,7 @@
 import numpy as np
 
 class Classifier:
-    """ Classe (abstraite) pour représenter un classifieur
+    """ Classe (abstraite) pour représenter un classifyur
         Attention: cette classe est ne doit pas être instanciée.
     """
     

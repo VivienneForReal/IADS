@@ -1,6 +1,6 @@
 import numpy as np
 
-from perceptron import ClassifierPerceptron
+from perceptron import Perceptron
 
 
 # CLasse (abstraite) pour représenter des noyaux
@@ -108,7 +108,7 @@ class KernelPoly(Kernel):
 
 
 # ------------------------ A COMPLETER :
-class ClassifierPerceptronKernel(ClassifierPerceptron):
+class PerceptronKernel(Perceptron):
     """ Perceptron de Rosenblatt kernelisé
     """
     def __init__(self, input_dimension, learning_rate, noyau, init=0):
