@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 
 class Classifier:
     """ Classe (abstraite) pour représenter un classifieur
