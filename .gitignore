@@ -6,10 +6,7 @@ __pycache__/
 archive/
 .DS_Store
 .vscode/
-*.txt
 *.pt
 evaluation_results/
 results/
-train_results/
-test_results/
 demo/
