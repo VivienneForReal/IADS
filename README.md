@@ -2,7 +2,7 @@
 
 ## Setup conda environment
 ```bash
-conda create -n iads python=3.10
+conda create -n iads python=3.10 -y
 conda activate iads
 pip install -r requirements.txt
 ```
