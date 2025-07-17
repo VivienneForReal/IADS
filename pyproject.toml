@@ -1,0 +1,85 @@
+# -*- coding: utf-8 -*-
+# @Author: H. T. Duong Vu
+# How to: https://packaging.python.org/en/latest/guides/section-build-and-publish/
+
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "iads"
+version = "0.0.1"
+description = "Customized and Simplified package for Core Supervised Learning Algorithms"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+
+keywords = ["supervised-learning", "unsupervised-learning", "algorithms", "machine-learning", "data-science"]
+
+authors = [
+    { name = "H. T. Duong Vu", email = "vuhoang.thduong@gmail.com" },
+]
+maintainers = [
+    { name = "H. T. Duong Vu", email = "vuhoang.thduong@gmail.com" },
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Data Science",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "seaborn",
+    "scikit-learn",
+    "pyyaml",
+    "tqdm",
+    "scipy",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "black",
+    "isort",
+    "flake8",
+    "mypy",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/kurosawaxyz/IADS"
+"Bug Reports" = "https://github.com/kurosawaxyz/IADS/issues"
+"Source" = "https://github.com/kurosawaxyz/IADS"
+
+[tool.hatch.build.targets.wheel]
+packages = ["iads"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/iads",
+    "/README.md",
+    "/LICENSE",
+]
+
+# Development tools configuration
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
