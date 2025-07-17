@@ -3,8 +3,6 @@
 
 # Import necessary libraries
 import numpy as np
-import pandas as pd
-from typing import Any
 
 from src.classif.base import Base
 
